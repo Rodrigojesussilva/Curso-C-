@@ -9,16 +9,25 @@ using System.Threading.Tasks;
 
 namespace Curso_C_
 {
-   public class Advogado
+    public class Pai
     {
-        public string nome;
-        public string oab;
-        public double salario;
+        public string Nome;
+        public int Idade;
+        public int QtdFh;
+        public bool Vivo;
 
-        public void ExibirInformacoes()
+        public Pai(string nome, int idade, int qtdfh, bool vivo)
         {
-            Console.WriteLine($"O nome do advogado é {nome}\nSeu oab é {oab}\nSeu salário é {salario}");
+            Nome = nome;
+            Idade = idade;
+            QtdFh = qtdfh;
+            Vivo = vivo;
         }
+
+        public void Exibir()
+        {
+            Console.WriteLine($"O nome do pai e:{Nome}, a idade dele e:{Idade}, A quantidade de filhos e:{QtdFh}, Ele esta vivo?{Vivo}");
+        }
+
     }
-    
- }
+}
