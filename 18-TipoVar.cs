@@ -26,7 +26,7 @@ namespace Curso_C_
 
             // Exemplo 3: Uso com Coleções
             var numeros = new int[] { 1, 2, 3, 4, 5 }; // O compilador infere o tipo como int[]
-            var nomes = new List<string> { "Alice", "Bob", "Charlie" }; // O compilador infere o tipo como List<string>
+            List<string> nomes = new List<string> { "Alice", "Bob", "Charlie" }; // O compilador infere o tipo como List<string>
 
             Console.WriteLine("Numbers:");
             foreach (var number in numeros)

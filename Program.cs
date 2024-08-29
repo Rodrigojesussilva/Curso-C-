@@ -7,5 +7,8 @@
 //var exemplo = new ExemploUsoDynamic();
 //exemplo.DemonstrarUsoDynamic();
 
-var exemplo = new ExemploUsoLINQ();
-exemplo.DemonstrarUsoLINQ();
+//var exemplo = new ExemploUsoLINQ();
+//exemplo.DemonstrarUsoLINQ();
+
+var m = new Marcos();
+m.Marquinhos();

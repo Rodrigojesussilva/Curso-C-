@@ -1,33 +1,40 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Numerics;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Curso_C_
 {
-    public class Pai
+    // o Exercício: Declare uma variável var
+    //  para um tipo complexo, como um Dictionary ou uma 
+    //  instância de uma classe personalizada.Mostre como a 
+    //  inferência de tipo funciona com tipos mais complexos.
+    public class Marcos 
+    {
+        public void Marquinhos() 
+        {
+            var mk = new pessoaMarcos
+            {
+                Nome = "Marcos",
+                Idade = 15
+
+            };
+            Console.WriteLine($"O nome e: {mk.Nome} A idade e: {mk.Idade}");
+        }
+           
+    }
+
+    public class pessoaMarcos
     {
         public string Nome;
         public int Idade;
-        public int QtdFh;
-        public bool Vivo;
-
-        public Pai(string nome, int idade, int qtdfh, bool vivo)
-        {
-            Nome = nome;
-            Idade = idade;
-            QtdFh = qtdfh;
-            Vivo = vivo;
-        }
-
-        public void Exibir()
-        {
-            Console.WriteLine($"O nome do pai e:{Nome}, a idade dele e:{Idade}, A quantidade de filhos e:{QtdFh}, Ele esta vivo?{Vivo}");
-        }
 
     }
 }
