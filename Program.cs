@@ -1,14 +1,7 @@
 ﻿using Curso_C_;
 
+var metodos  = new Metodos();
+metodos.DemonstrarMetodos();
 
-//var example = new VarUsageExample();
-//example.DemonstrateVarUsage();
 
-//var exemplo = new ExemploUsoDynamic();
-//exemplo.DemonstrarUsoDynamic();
 
-//var exemplo = new ExemploUsoLINQ();
-//exemplo.DemonstrarUsoLINQ();
-
-var m = new Marcos();
-m.Marquinhos();
