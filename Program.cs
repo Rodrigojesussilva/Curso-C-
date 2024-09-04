@@ -1,7 +1,5 @@
 ﻿using Curso_C_;
 
-var metodos  = new Metodos();
-metodos.DemonstrarMetodos();
-
-
+var m = new Metodos();
+m.DemonstrarMetodos();
 
