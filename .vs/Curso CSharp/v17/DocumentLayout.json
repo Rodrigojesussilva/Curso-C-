@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Professor\\Desktop\\Conteudo do Curso Tecnico\\Curso C#\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6A73037-2A69-412E-B3B0-57439C9FA53B}|Curso CSharp.csproj|c:\\users\\professor\\desktop\\conteudo do curso tecnico\\curso c#\\26-programveiculo(parametroobjeto).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6A73037-2A69-412E-B3B0-57439C9FA53B}|Curso CSharp.csproj|solutionrelative:26-programveiculo(parametroobjeto).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6A73037-2A69-412E-B3B0-57439C9FA53B}|Curso CSharp.csproj|c:\\users\\professor\\desktop\\conteudo do curso tecnico\\curso c#\\25-programlivro(parametroobjeto).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6A73037-2A69-412E-B3B0-57439C9FA53B}|Curso CSharp.csproj|solutionrelative:25-programlivro(parametroobjeto).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "26-ProgramVeiculo(ParametroObjeto).cs",
+              "DocumentMoniker": "C:\\Users\\Professor\\Desktop\\Conteudo do Curso Tecnico\\Curso C#\\26-ProgramVeiculo(ParametroObjeto).cs",
+              "RelativeDocumentMoniker": "26-ProgramVeiculo(ParametroObjeto).cs",
+              "ToolTip": "C:\\Users\\Professor\\Desktop\\Conteudo do Curso Tecnico\\Curso C#\\26-ProgramVeiculo(ParametroObjeto).cs",
+              "RelativeToolTip": "26-ProgramVeiculo(ParametroObjeto).cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAswJIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T19:43:19.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "25-ProgramLivro(ParametroObjeto).cs",
+              "DocumentMoniker": "C:\\Users\\Professor\\Desktop\\Conteudo do Curso Tecnico\\Curso C#\\25-ProgramLivro(ParametroObjeto).cs",
+              "RelativeDocumentMoniker": "25-ProgramLivro(ParametroObjeto).cs",
+              "ToolTip": "C:\\Users\\Professor\\Desktop\\Conteudo do Curso Tecnico\\Curso C#\\25-ProgramLivro(ParametroObjeto).cs",
+              "RelativeToolTip": "25-ProgramLivro(ParametroObjeto).cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAkwIoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T19:42:59.036Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

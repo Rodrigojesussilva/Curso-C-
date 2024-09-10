@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Curso_C_
 {
-
     public class Colecoes
     {
         public void ExplicarDictionary()
@@ -92,5 +91,6 @@ namespace Curso_C_
         }
                
     }
+
 }
     
