@@ -1,10 +1,15 @@
 ﻿using Curso_C_;
+using Curso_C_.ParadigmasOO;
 using System;
 using System.Collections.Generic;
 
+//Programa Biblioteca e Programa Veiculo
+
+/*
 namespace BibliotecaVeiculos
-{
-    class Program
+{  
+ 
+     *  class Program
     {
         static void Main(string[] args)
         {
@@ -283,5 +288,19 @@ namespace BibliotecaVeiculos
                 Console.WriteLine("\nVeículo não encontrado.");
             }
         }
-    }
+    }    
+
 }
+*/
+
+// Instância de Cachorro
+Cachorro cachorro = new Cachorro("Rex");
+cachorro.ExibirInformacoes();
+cachorro.FazerSom();
+cachorro.ExplicarHeranca();
+
+// Instância de Gato
+Gato gato = new Gato("Mimi");
+gato.ExibirInformacoes();
+gato.FazerSom();
+gato.ExplicarHeranca();
