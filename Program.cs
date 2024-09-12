@@ -341,7 +341,6 @@ funcionarioSemDepartamento.ExibirInformacoes();
 funcionarioComDepartamento.ExplicarAssociacao();
 */
 
-
 /*
 // Criando um objeto Carro, que inclui a criação de um Motor
 Carro carro = new Carro("Fusca", "Motor 1600");
@@ -353,10 +352,7 @@ carro.ExibirInformacoes();
 carro.ExplicarComposicao();
 */
 
-
-
-
-
+/*
 // Criando funcionários
 FuncionarioMulti funcionario1 = new FuncionarioMulti("Ana");
 FuncionarioMulti funcionario2 = new FuncionarioMulti("Carlos");
@@ -373,4 +369,34 @@ projeto.ExibirInformacoes();
 
 // Explicando o conceito de multiplicidade
 projeto.ExplicarMultiplicidade();
+*/
 
+/*
+AnimalAbs cachorro = new CachorroAbs("Rex");
+AnimalAbs gato = new GatoAbs("Mimi");
+
+// Exibindo informações e fazendo som dos animais
+cachorro.ExibirInformacoes();
+cachorro.FazerSom();
+
+gato.ExibirInformacoes();
+gato.FazerSom();
+
+// Explicando o conceito de classe abstrata
+cachorro.ExplicarClasseAbstrata();
+*/
+
+// Criando instâncias de classes que implementam a interface
+IAnimal cachorro = new CachorroInter("Rex");
+IAnimal gato = new GatoInter("Mimi");
+
+// Exibindo informações e sons dos animais
+cachorro.ExibirInformacoes();
+cachorro.FazerSom();
+
+gato.ExibirInformacoes();
+gato.FazerSom();
+
+// Explicando o conceito de interface
+ExplicadorDeInterface explicador = new ExplicadorDeInterface();
+explicador.ExplicarInterface();
