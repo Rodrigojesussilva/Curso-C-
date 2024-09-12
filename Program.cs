@@ -386,6 +386,7 @@ gato.FazerSom();
 cachorro.ExplicarClasseAbstrata();
 */
 
+/*
 // Criando instâncias de classes que implementam a interface
 IAnimal cachorro = new CachorroInter("Rex");
 IAnimal gato = new GatoInter("Mimi");
@@ -400,3 +401,15 @@ gato.FazerSom();
 // Explicando o conceito de interface
 ExplicadorDeInterface explicador = new ExplicadorDeInterface();
 explicador.ExplicarInterface();
+*/
+var exp = new ExplicadoraDePolimorfismo();
+AnimalPoli[] animais = new AnimalPoli[3];
+animais[0] = new CachorroPoli("Rex");
+animais[1] = new GatoPoli("Mimi");
+animais[2] = new AnimalPoli("Dinossauro");
+
+foreach (AnimalPoli animal in animais)
+{
+    animal.FazerSom(); // Comportamento polimórfico
+}
+exp.ExplicarPolimorfismo();
