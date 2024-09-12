@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,7 @@ namespace Curso_C_.ParadigmasOO
     {
         public Cachorro(string nome) : base(nome)
         {
+
         }
 
         // Sobrescrevendo o método FazerSom da classe base
