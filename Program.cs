@@ -5,42 +5,39 @@ using System.Collections.Generic;
 
 //Programa Biblioteca e Programa Veiculo
 
-/*
+
 namespace BibliotecaVeiculos
-{  
- 
-     *  class Program
+{
+
+    class Program
     {
+        static List<Usuario> usuarios = new List<Usuario>(); // Lista de usuários
+
         static void Main(string[] args)
         {
-            // Inicialização de objetos
             Biblioteca biblioteca = new Biblioteca();
-            Garagem garagem = new Garagem();
-            Usuario usuario = new Usuario("João Silva", "12345678900");
-            Cliente cliente = new Cliente("Maria Oliveira", "98765432100");
-
-            // Loop do menu principal
             int opcao = 0;
+
             do
             {
-                Console.Clear(); // Limpa a tela para uma melhor organização visual
+                Console.Clear();
                 Console.WriteLine("==============================================");
                 Console.WriteLine("==========   SISTEMA DE GERENCIAMENTO   ======");
                 Console.WriteLine("==============================================\n");
                 Console.WriteLine("1. Biblioteca de Livros");
-                Console.WriteLine("2. Sistema de Gerenciamento de Veículos");
+                Console.WriteLine("2. Gerenciar Usuários");
                 Console.WriteLine("0. Sair");
-                Console.WriteLine("==============================================");
+
                 Console.Write("Escolha uma opção: ");
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
                 {
                     case 1:
-                        MenuBiblioteca(biblioteca, usuario);
+                        MenuBiblioteca(biblioteca);
                         break;
                     case 2:
-                        MenuVeiculos(garagem, cliente);
+                        MenuUsuarios();
                         break;
                     case 0:
                         Console.WriteLine("\nSaindo do programa...");
@@ -52,7 +49,7 @@ namespace BibliotecaVeiculos
             } while (opcao != 0);
         }
 
-        static void MenuBiblioteca(Biblioteca biblioteca, Usuario usuario)
+        static void MenuBiblioteca(Biblioteca biblioteca)
         {
             int opcao = 0;
             do
@@ -65,7 +62,6 @@ namespace BibliotecaVeiculos
                 Console.WriteLine("2. Listar Livros");
                 Console.WriteLine("3. Emprestar Livro");
                 Console.WriteLine("4. Devolver Livro");
-                Console.WriteLine("5. Exibir Livros Emprestados");
                 Console.WriteLine("0. Voltar");
                 Console.WriteLine("==============================================");
                 Console.Write("Escolha uma opção: ");
@@ -80,13 +76,10 @@ namespace BibliotecaVeiculos
                         biblioteca.ListarLivros();
                         break;
                     case 3:
-                        EmprestarLivro(biblioteca, usuario);
+                        EmprestarLivro(biblioteca);
                         break;
                     case 4:
-                        DevolverLivro(biblioteca, usuario);
-                        break;
-                    case 5:
-                        usuario.ExibirLivrosEmprestados();
+                        DevolverLivro(biblioteca);
                         break;
                     case 0:
                         Console.WriteLine("\nVoltando ao menu principal...");
@@ -100,20 +93,18 @@ namespace BibliotecaVeiculos
             } while (opcao != 0);
         }
 
-        static void MenuVeiculos(Garagem garagem, Cliente cliente)
+        static void MenuUsuarios()
         {
             int opcao = 0;
             do
             {
                 Console.Clear();
                 Console.WriteLine("==============================================");
-                Console.WriteLine("=======   SISTEMA DE VEÍCULOS - GARAGEM   =====");
+                Console.WriteLine("==========   GERENCIAR USUÁRIOS   ============");
                 Console.WriteLine("==============================================\n");
-                Console.WriteLine("1. Adicionar Veículo");
-                Console.WriteLine("2. Listar Veículos");
-                Console.WriteLine("3. Comprar Veículo");
-                Console.WriteLine("4. Vender Veículo");
-                Console.WriteLine("5. Exibir Veículos Comprados");
+                Console.WriteLine("1. Adicionar Usuário");
+                Console.WriteLine("2. Listar Usuários");
+                Console.WriteLine("3. Remover Usuário");
                 Console.WriteLine("0. Voltar");
                 Console.WriteLine("==============================================");
                 Console.Write("Escolha uma opção: ");
@@ -122,19 +113,13 @@ namespace BibliotecaVeiculos
                 switch (opcao)
                 {
                     case 1:
-                        AdicionarVeiculo(garagem);
+                        AdicionarUsuario();
                         break;
                     case 2:
-                        ListarVeiculos(garagem);
+                        ListarUsuarios();
                         break;
                     case 3:
-                        ComprarVeiculo(garagem, cliente);
-                        break;
-                    case 4:
-                        VenderVeiculo(garagem);
-                        break;
-                    case 5:
-                        cliente.ExibirVeiculosComprados();
+                        RemoverUsuario();
                         break;
                     case 0:
                         Console.WriteLine("\nVoltando ao menu principal...");
@@ -144,8 +129,88 @@ namespace BibliotecaVeiculos
                         break;
                 }
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                Console.ReadKey(); // Pausa para permitir que o usuário veja a mensagem antes de continuar
+                Console.ReadKey();
             } while (opcao != 0);
+        }
+
+        static void AdicionarUsuario()
+        {
+            Console.Clear();
+            Console.WriteLine("==============================================");
+            Console.WriteLine("=========   ADICIONAR NOVO USUÁRIO   =========");
+            Console.WriteLine("==============================================");
+            Console.Write("Digite o nome do usuário: ");
+            string nome = Console.ReadLine();
+            Console.Write("Digite o CPF do usuário: ");
+            string cpf = Console.ReadLine();
+
+            Usuario usuario = new Usuario(nome, cpf);
+            usuarios.Add(usuario);
+            Console.WriteLine("\nUsuário adicionado com sucesso!");
+        }
+
+        static void ListarUsuarios()
+        {
+            Console.Clear();
+            Console.WriteLine("==============================================");
+            Console.WriteLine("=========   LISTA DE USUÁRIOS CADASTRADOS   =========");
+            Console.WriteLine("==============================================");
+
+            if (usuarios.Count == 0)
+            {
+                Console.WriteLine("\nNenhum usuário cadastrado.");
+            }
+            else
+            {
+                for (int i = 0; i < usuarios.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {usuarios[i].Nome} - CPF: {usuarios[i].Cpf}");
+                }
+            }
+        }
+
+        static Usuario SelecionarUsuario()
+        {
+            ListarUsuarios();
+            if (usuarios.Count == 0)
+            {
+                return null;
+            }
+
+            Console.Write("\nSelecione o número do usuário: ");
+            int escolha = int.Parse(Console.ReadLine());
+
+            if (escolha > 0 && escolha <= usuarios.Count)
+            {
+                return usuarios[escolha - 1];
+            }
+            else
+            {
+                Console.WriteLine("\nUsuário inválido.");
+                return null;
+            }
+        }
+
+        static void RemoverUsuario()
+        {
+            ListarUsuarios();
+            if (usuarios.Count == 0)
+            {
+                return;
+            }
+
+            Console.Write("\nSelecione o número do usuário a ser removido: ");
+            int escolha = int.Parse(Console.ReadLine());
+
+            if (escolha > 0 && escolha <= usuarios.Count)
+            {
+                usuarios.RemoveAt(escolha - 1);
+                Console.WriteLine("\nUsuário removido com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("\nUsuário inválido.");
+            }
         }
 
         static void AdicionarLivro(Biblioteca biblioteca)
@@ -168,7 +233,7 @@ namespace BibliotecaVeiculos
             Console.WriteLine("\nLivro adicionado com sucesso!");
         }
 
-        static void EmprestarLivro(Biblioteca biblioteca, Usuario usuario)
+        static void EmprestarLivro(Biblioteca biblioteca)
         {
             Console.Clear();
             Console.WriteLine("==============================================");
@@ -179,8 +244,16 @@ namespace BibliotecaVeiculos
             Livro livro = biblioteca.BuscarLivroPorTitulo(titulo);
             if (livro != null)
             {
-                usuario.EmprestarLivro(livro, biblioteca);
-                Console.WriteLine("\nLivro emprestado com sucesso!");
+                Usuario usuario = SelecionarUsuario();
+                if (usuario != null)
+                {
+                    usuario.EmprestarLivro(livro, biblioteca);
+                    Console.WriteLine("\nLivro emprestado com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("\nOperação cancelada: Usuário inválido.");
+                }
             }
             else
             {
@@ -188,7 +261,7 @@ namespace BibliotecaVeiculos
             }
         }
 
-        static void DevolverLivro(Biblioteca biblioteca, Usuario usuario)
+        static void DevolverLivro(Biblioteca biblioteca)
         {
             Console.Clear();
             Console.WriteLine("==============================================");
@@ -199,99 +272,26 @@ namespace BibliotecaVeiculos
             Livro livro = biblioteca.BuscarLivroPorTitulo(titulo);
             if (livro != null)
             {
-                usuario.DevolverLivro(livro, biblioteca);
-                Console.WriteLine("\nLivro devolvido com sucesso!");
+                Usuario usuario = SelecionarUsuario();
+                if (usuario != null)
+                {
+                    usuario.DevolverLivro(livro, biblioteca);
+                    Console.WriteLine("\nLivro devolvido com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("\nOperação cancelada: Usuário inválido.");
+                }
             }
             else
             {
                 Console.WriteLine("\nLivro não encontrado na lista de empréstimos.");
             }
         }
-
-        static void AdicionarVeiculo(Garagem garagem)
-        {
-            Console.Clear();
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   ADICIONAR NOVO VEÍCULO   =========");
-            Console.WriteLine("==============================================");
-            Console.Write("Digite a marca do veículo: ");
-            string marca = Console.ReadLine();
-            Console.Write("Digite o modelo do veículo: ");
-            string modelo = Console.ReadLine();
-            Console.Write("Digite o ano do veículo: ");
-            int ano = int.Parse(Console.ReadLine());
-            Console.Write("Digite a quilometragem do veículo: ");
-            int quilometragem = int.Parse(Console.ReadLine());
-
-            Veiculo veiculo = new Veiculo(marca, modelo, ano, quilometragem);
-            garagem.AdicionarVeiculo(veiculo);
-            Console.WriteLine("\nVeículo adicionado com sucesso!");
-        }
-
-        static void ListarVeiculos(Garagem garagem)
-        {
-            Console.Clear();
-            Console.WriteLine("==============================================");
-            Console.WriteLine("======   LISTA DE VEÍCULOS DISPONÍVEIS   =====");
-            Console.WriteLine("==============================================");
-            var veiculos = garagem.ListarTodosVeiculos(); // Obtém todos os veículos da garagem
-
-            if (veiculos.Count == 0)
-            {
-                Console.WriteLine("\nNenhum veículo disponível.");
-            }
-            else
-            {
-                foreach (var veiculo in veiculos) // Itera sobre a lista de veículos
-                {
-                    veiculo.ExibirDetalhes(); // Exibe os detalhes de cada veículo
-                }
-            }
-        }
-
-        static void ComprarVeiculo(Garagem garagem, Cliente cliente)
-        {
-            Console.Clear();
-            Console.WriteLine("==============================================");
-            Console.WriteLine("=========   COMPRA DE VEÍCULO   =============");
-            Console.WriteLine("==============================================");
-            Console.Write("Digite o modelo do veículo a ser comprado: ");
-            string modelo = Console.ReadLine();
-            Veiculo veiculo = garagem.BuscarVeiculoPorModelo(modelo);
-            if (veiculo != null)
-            {
-                cliente.ComprarVeiculo(veiculo, garagem);
-                Console.WriteLine("\nVeículo comprado com sucesso!");
-            }
-            else
-            {
-                Console.WriteLine("\nVeículo não encontrado.");
-            }
-        }
-
-        static void VenderVeiculo(Garagem garagem)
-        {
-            Console.Clear();
-            Console.WriteLine("==============================================");
-            Console.WriteLine("==========   VENDA DE VEÍCULO   =============");
-            Console.WriteLine("==============================================");
-            Console.Write("Digite o modelo do veículo a ser vendido: ");
-            string modelo = Console.ReadLine();
-            Veiculo veiculo = garagem.BuscarVeiculoPorModelo(modelo);
-            if (veiculo != null)
-            {
-                garagem.VenderVeiculo(veiculo);
-                Console.WriteLine("\nVeículo vendido com sucesso!");
-            }
-            else
-            {
-                Console.WriteLine("\nVeículo não encontrado.");
-            }
-        }
-    }    
+    }
 
 }
-*/
+
 
 /*
 
@@ -402,6 +402,8 @@ gato.FazerSom();
 ExplicadorDeInterface explicador = new ExplicadorDeInterface();
 explicador.ExplicarInterface();
 */
+
+/*
 var exp = new ExplicadoraDePolimorfismo();
 AnimalPoli[] animais = new AnimalPoli[3];
 animais[0] = new CachorroPoli("Rex");
@@ -412,4 +414,4 @@ foreach (AnimalPoli animal in animais)
 {
     animal.FazerSom(); // Comportamento polimórfico
 }
-exp.ExplicarPolimorfismo();
+exp.ExplicarPolimorfismo();*/
