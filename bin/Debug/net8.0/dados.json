@@ -1,0 +1,34 @@
+{
+  "Usuarios": [
+    {
+      "Nome": "Jo\u00E3o Silva",
+      "Cpf": "12345678900",
+      "LivrosEmprestados": []
+    },
+    {
+      "Nome": "Maria Oliveira",
+      "Cpf": "98765432100",
+      "LivrosEmprestados": []
+    },
+    {
+      "Nome": "Rodrigo de Jesus ",
+      "Cpf": "213213123213",
+      "LivrosEmprestados": []
+    }
+  ],
+  "Livros": [
+    {
+      "Titulo": "O Senhor dos An\u00E9is",
+      "Autor": "J.R.R. Tolkien",
+      "Ano": 1954,
+      "Paginas": 1216
+    },
+    {
+      "Titulo": "1984",
+      "Autor": "George Orwell",
+      "Ano": 1949,
+      "Paginas": 328
+    }
+  ],
+  "Emprestimos": []
+}

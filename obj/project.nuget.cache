@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VD1iHq8tBP8=",
+  "dgSpecHash": "vJ9xQ+Hm+mA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Professor\\Desktop\\Conteudo do Curso Tecnico\\Curso C#\\Curso CSharp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Professor\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Professor\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512"
+  ],
   "logs": []
 }
